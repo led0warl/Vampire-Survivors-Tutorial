@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace Vampire
 {
     public class PlayerAnimation : MonoBehaviour
@@ -11,6 +12,7 @@ namespace Vampire
         Animator animator;
         SpriteRenderer spriteRenderer;
         PlayerInput playerInput;
+        PlayerMovement playerMovement;
 
         // Start is called before the first frame update
         void Start()
@@ -18,12 +20,13 @@ namespace Vampire
             animator= GetComponent<Animator>();
             spriteRenderer= GetComponent<SpriteRenderer>();
             playerInput = GetComponent<PlayerInput>();
+            playerMovement = GetComponent<PlayerMovement>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(playerInput.MoveDir.x != 0 || playerInput.MoveDir.y != 0)
+            if(playerMovement.MoveDir.x != 0 || playerMovement.MoveDir.y != 0)
             {
                 animator.SetBool("Move", true);
 

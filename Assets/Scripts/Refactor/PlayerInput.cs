@@ -6,35 +6,24 @@ namespace Vampire
 {
     public class PlayerInput : MonoBehaviour
     {
-        
+
         [SerializeField]
         private float lastHorizontalVec;
         [SerializeField]
         private float lastVerticalVec;
-        [SerializeField]
-        private Vector2 moveDir;
 
-        
+        PlayerMovement playerMovement;
 
 
-
-        
         [HideInInspector]
         public float LastHorizontalVec { get { return lastHorizontalVec; } set { } }
         [HideInInspector]
         public float LastVerticalVec { get { return lastVerticalVec; } set { } }
         [HideInInspector]
-        public Vector2 MoveDir { get { return moveDir; } set { } }
-
-
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
-          
+            playerMovement = GetComponent<PlayerMovement>();
         }
-
-       
-
 
 
         public void InputManagement()
@@ -42,16 +31,16 @@ namespace Vampire
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
 
-            moveDir = new Vector2(moveX, moveY).normalized;
+            playerMovement.MoveDir = new Vector2(moveX, moveY).normalized;
 
-            if (moveDir.x != 0)
+            if (playerMovement.MoveDir.x != 0)
             {
-                lastHorizontalVec = moveDir.x;
+                lastHorizontalVec = playerMovement.MoveDir.x;
             }
 
-            if (moveDir.y != 0)
+            if (playerMovement.MoveDir.y != 0)
             {
-                lastVerticalVec = moveDir.y;
+                lastVerticalVec = playerMovement.MoveDir.y;
             }
         }
     }

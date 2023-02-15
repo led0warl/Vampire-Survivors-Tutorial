@@ -4,20 +4,25 @@ using UnityEngine;
 
 namespace Vampire
 {
-    public class PlayerMovment : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour,IMoveable
     {
 
         // Movement
         [SerializeField]
         private float moveSpeed;
-        
+        [SerializeField]
+        private Vector2 moveDir;
+
 
         Rigidbody2D rb;
 
-        [SerializeField]
+        
         PlayerInput playInput;
 
-      
+        public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
+        public Vector2 MoveDir { get=>moveDir; set => moveDir = value; }
+
+
 
         // Start is called before the first frame update
         void Start()
@@ -37,9 +42,11 @@ namespace Vampire
             Move();
         }
 
-        void Move()
+        
+
+        public void Move()
         {
-            rb.velocity = new Vector2(playInput.MoveDir.x * moveSpeed, playInput.MoveDir.y * moveSpeed);
+            rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
         }
     }
 }
