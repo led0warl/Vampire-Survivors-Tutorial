@@ -12,7 +12,7 @@ namespace Vampire
         private float moveSpeed;
         [SerializeField]
         private Vector2 moveDir;
-
+        Vector2 lastMovedVector;
 
         Rigidbody2D rb;
 
@@ -22,6 +22,8 @@ namespace Vampire
         public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
         public Vector2 MoveDir { get=>moveDir; set => moveDir = value; }
 
+        [HideInInspector]
+        public Vector2 LastMovedVector { get=>lastMovedVector; set => lastMovedVector = value; }
 
 
         // Start is called before the first frame update

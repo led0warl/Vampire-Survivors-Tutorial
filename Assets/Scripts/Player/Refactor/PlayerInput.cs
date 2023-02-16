@@ -19,10 +19,11 @@ namespace Vampire
         public float LastHorizontalVec { get { return lastHorizontalVec; } set { } }
         [HideInInspector]
         public float LastVerticalVec { get { return lastVerticalVec; } set { } }
-        [HideInInspector]
+      
         private void Awake()
         {
             playerMovement = GetComponent<PlayerMovement>();
+            playerMovement.LastMovedVector = new Vector2(1, 0f); //If we don't do this and game starts up and don't move, the projectile weapon will have no momentum
         }
 
 
@@ -36,11 +37,18 @@ namespace Vampire
             if (playerMovement.MoveDir.x != 0)
             {
                 lastHorizontalVec = playerMovement.MoveDir.x;
+                playerMovement.LastMovedVector = new Vector2(lastHorizontalVec, 0f);
             }
 
             if (playerMovement.MoveDir.y != 0)
             {
                 lastVerticalVec = playerMovement.MoveDir.y;
+                playerMovement.LastMovedVector = new Vector2(0f, lastVerticalVec);
+            }
+
+            if(playerMovement.MoveDir.x != 0 && playerMovement.MoveDir.y != 0)
+            {
+                playerMovement.LastMovedVector = new Vector2(lastHorizontalVec, lastVerticalVec);
             }
         }
     }
