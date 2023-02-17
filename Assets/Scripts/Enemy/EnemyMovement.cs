@@ -8,15 +8,16 @@ namespace Vampire.Enemy
     public class EnemyMovement : MonoBehaviour,IMoveable
     {
         [SerializeField]
-        float moveSpeed;
+        EnemyScriptableObject enemyData;
 
         Transform player;
 
-        public float MoveSpeed { get => moveSpeed; set => value = moveSpeed; }
+        public float MoveSpeed { get => enemyData.MoveSpeed; set => value = enemyData.MoveSpeed; }
+        
 
         public void Move()
         {
-            transform.position = Vector2.MoveTowards(transform.position,player.transform.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position,player.transform.position, enemyData.MoveSpeed * Time.deltaTime);
         }
 
         private void Start()

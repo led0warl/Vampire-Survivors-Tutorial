@@ -9,18 +9,9 @@ namespace Vampire.Weapon
 
         [Header("Weapon Stats")]
         [SerializeField]
-        protected GameObject prefab;
-        [SerializeField]
-        private float damage;
-        [SerializeField]
-        private float speed;
-        [SerializeField]
-        private float cooldownDuration;
+        protected WeaponScriptableObject weaponData;
         float currentCooldown;
-        [SerializeField]
-        int pierce;
-
-        public float Speed { get=>speed; set => speed = value; }
+        
 
         protected PlayerMovement playerMovement;
 
@@ -29,7 +20,7 @@ namespace Vampire.Weapon
         protected virtual void Start()
         {
             playerMovement = FindObjectOfType<PlayerMovement>();
-            currentCooldown = cooldownDuration; // At the start set the current cooldown to be cooldown duration
+            currentCooldown = weaponData.CooldownDuration; // At the start set the current cooldown to be cooldown duration
         }
 
         // Update is called once per frame
@@ -44,7 +35,7 @@ namespace Vampire.Weapon
 
         protected virtual void Attack()
         {
-            currentCooldown= cooldownDuration; 
+            currentCooldown= weaponData.CooldownDuration; 
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
+
 namespace Vampire.Weapon
 {
     /// <summary>
@@ -10,11 +11,30 @@ namespace Vampire.Weapon
     /// </summary>
     public abstract class ProjectileWeaponBehaviour : MonoBehaviour
     {
+        [SerializeField]
+        protected WeaponScriptableObject weaponData;
 
         protected Vector3 direction;
 
         [SerializeField]
         float destroyAfterSeconds;
+
+
+        //Current stats
+        [SerializeField]
+        protected float currentDamage;
+        protected float currentSpeed;
+        protected float currentCooldownDuration;
+        protected int currentPierce;
+
+
+        void Awake()
+        {
+            currentDamage = weaponData.Damage;
+            currentSpeed = weaponData.Speed;
+            currentCooldownDuration= weaponData.CooldownDuration;
+            currentPierce= weaponData.Pierce;
+        }
 
         // Start is called before the first frame update
         protected virtual void Start()
@@ -68,6 +88,27 @@ namespace Vampire.Weapon
 
             transform.localScale = scale;
             transform.rotation = Quaternion.Euler(rotation); // Can't simply set the vector because cannot convert
+        }
+
+        protected virtual void OnTriggerEnter2D(Collider2D col)
+        {
+            //Reference the script from the collided collider and deal damage using TakeDamage()
+            if (col.CompareTag("Enemy"))
+            {
+                EnemyStat enemy = col.GetComponent<EnemyStat>();
+                enemy.TakeDamage(currentDamage); // Make sure to use currentDamage instead of weaponData.Damage in case any damage multipliers in the future
+
+                ReducePierce();
+            }
+        }
+
+        void ReducePierce() // Destroy once the pierce reaches 0
+        {
+            currentPierce--;
+            if (currentPierce <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

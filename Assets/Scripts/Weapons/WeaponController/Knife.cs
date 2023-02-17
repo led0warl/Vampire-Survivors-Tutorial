@@ -16,7 +16,7 @@ namespace Vampire.Weapon
         protected override void Attack()
         {
             base.Attack();
-            GameObject spawnedKnige = Instantiate(prefab);
+            GameObject spawnedKnige = Instantiate(weaponData.Prefab);
             spawnedKnige.transform.position = transform.position; // Assign the position to be the same as this object which is parented to the player
             spawnedKnige.GetComponent<KnifeBehaviour>().DirectionChecker(playerMovement.LastMovedVector);
 

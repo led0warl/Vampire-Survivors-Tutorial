@@ -5,17 +5,16 @@ namespace Vampire.WeaponBehaviour
 {
     public class KnifeBehaviour : ProjectileWeaponBehaviour
     {
-        Knife knife;
+        
 
         protected override void Start()
         {
             base.Start();
-            knife = FindObjectOfType<Knife>();
         }
 
         private void Update()
         {
-            transform.position += direction * knife.Speed * Time.deltaTime;
+            transform.position += direction * weaponData.Speed * Time.deltaTime;
         }
     }
 }

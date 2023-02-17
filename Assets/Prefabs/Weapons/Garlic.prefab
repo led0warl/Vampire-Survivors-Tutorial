@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5353096537241152379}
   - component: {fileID: 2921062175792321818}
   - component: {fileID: 1196177614107211368}
+  - component: {fileID: 685657496599571166}
   m_Layer: 0
   m_Name: Garlic
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1908769513
   m_SortingLayer: 3
-  m_SortingOrder: 20
+  m_SortingOrder: 0
   m_Sprite: {fileID: 978134135, guid: 4bd3e70c2b799c746a4226097fa4b649, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,4 +98,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b24afc4579d2643b29955102c63333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 43bcce0a74a93f94997a30413a3167ee, type: 2}
   destroyAfterSecond: 1.5
+--- !u!60 &685657496599571166
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197481892259354558}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.121172115, y: 0.3692543}
+      - {x: -0.04970199, y: 0.37743735}
+      - {x: -0.26244652, y: 0.30806085}
+      - {x: -0.37412897, y: 0.09087712}
+      - {x: -0.33269405, y: -0.2150061}
+      - {x: 0.0077874064, y: -0.38198438}
+      - {x: 0.30832058, y: -0.25469893}
+      - {x: 0.34358466, y: -0.14031155}
+      - {x: 0.37900364, y: 0.102017075}
+      - {x: 0.25174206, y: 0.29125914}
