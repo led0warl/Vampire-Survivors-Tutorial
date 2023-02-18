@@ -347,6 +347,8 @@ GameObject:
   - component: {fileID: 784445896}
   - component: {fileID: 784445894}
   - component: {fileID: 784445897}
+  - component: {fileID: 784445898}
+  - component: {fileID: 784445899}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -461,7 +463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784445886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9125475, y: -0.19011407, z: 0}
+  m_LocalPosition: {x: -0.548, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -527,8 +529,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c64716280a8bad4fb57b892d68dc8da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   moveDir: {x: 0, y: 0}
+  characterData: {fileID: 11400000, guid: 8ff915b29e31c5d4c85583637b4bc773, type: 2}
+--- !u!114 &784445898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784445886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de7f2dec9e4e3a4a92da862c527aaf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 8ff915b29e31c5d4c85583637b4bc773, type: 2}
+  invincibilityDuration: 0.5
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experienceCapIncrease: 100
+  - startLevel: 4
+    endLevel: 5
+    experienceCapIncrease: 200
+--- !u!114 &784445899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784445886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19631046c91986746b9dcca70e804655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1736874524
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,8 +734,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 8ca8f8081e75cad42b49f21670b2f0be, type: 2}
-  currentMoveSpeed: 0
-  currentHealth: 0
+--- !u!114 &2044032088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044032077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c33d715b5266444bb61f9eea1629d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Blue Gem
+    itemPrefab: {fileID: 8978494775903779866, guid: 52c11cfdecbc8784aa2fb220b097a82d, type: 3}
+    dropRate: 50
 --- !u!1001 &4732967832529367116
 PrefabInstance:
   m_ObjectHideFlags: 0

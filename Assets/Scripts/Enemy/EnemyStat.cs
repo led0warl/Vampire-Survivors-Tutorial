@@ -11,9 +11,7 @@ namespace Vampire
         public EnemyScriptableObject enemyData;
 
         //Current stats
-        [SerializeField]
         float currentMoveSpeed;
-        [SerializeField]
         float currentHealth;
         float currentDamage;
 
@@ -41,8 +39,16 @@ namespace Vampire
             Destroy(gameObject);
         }
 
-       
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            //Reference the script from the collider and deal damage using TakeDamage()
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                PlayerStat player = collision.gameObject.GetComponent<PlayerStat>();
+                player.TakeDamage(currentDamage); //Make sure to use currentDamage instead of weaponData.damage in case any damage multipliers in the future
+            }
+        }
 
-        
+
     }
 }

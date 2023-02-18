@@ -9,17 +9,17 @@ namespace Vampire
 
         // Movement
         [SerializeField]
-        private float moveSpeed;
-        [SerializeField]
         private Vector2 moveDir;
         Vector2 lastMovedVector;
 
+        // References
         Rigidbody2D rb;
-
-        
         PlayerInput playInput;
 
-        public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
+        [SerializeField]
+        CharacterScriptableObject characterData;
+
+        public float MoveSpeed { get => characterData.MoveSpeed;  }
         public Vector2 MoveDir { get=>moveDir; set => moveDir = value; }
 
         [HideInInspector]
@@ -48,7 +48,7 @@ namespace Vampire
 
         public void Move()
         {
-            rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
+            rb.velocity = new Vector2(moveDir.x * characterData.MoveSpeed, moveDir.y * MoveSpeed);
         }
     }
 }

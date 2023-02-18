@@ -42,6 +42,13 @@ namespace Vampire.Weapon
                 EnemyStat enemy = col.GetComponent<EnemyStat>();
                 enemy.TakeDamage(currentDamage);
             }
+            else if (col.CompareTag("Prop"))
+            {
+                if (col.gameObject.TryGetComponent(out BreakableProps breakable))
+                {
+                    breakable.TakeDamage(currentDamage);
+                }
+            }
         }
 
 
