@@ -530,7 +530,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDir: {x: 0, y: 0}
-  characterData: {fileID: 11400000, guid: 8ff915b29e31c5d4c85583637b4bc773, type: 2}
 --- !u!114 &784445898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,7 +578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1736874525
 Transform:
   m_ObjectHideFlags: 0
@@ -720,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fbed17309470f49b33fa26e5e93ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 8ca8f8081e75cad42b49f21670b2f0be, type: 2}
+  enemy: {fileID: 0}
 --- !u!114 &2044032083
 MonoBehaviour:
   m_ObjectHideFlags: 0

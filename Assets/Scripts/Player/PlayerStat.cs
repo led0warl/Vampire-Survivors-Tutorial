@@ -10,11 +10,25 @@ namespace Vampire
         CharacterScriptableObject characterData;
 
         //current stats
-        float currentHealth;
         float currentRecovery;
         float currentMoveSpeed;
+        float currentHealth;
         float currentMight;
         float currentProjectileSpeed;
+        float currentMagnet;
+
+        public float CurrentRecovery { get=>currentRecovery; set=>currentRecovery = value; }
+        public float CurrentMoveSpeed { get => currentMoveSpeed; set => currentMoveSpeed = value; }
+
+        public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
+
+        public float CurrentMight { get => currentMight; set => currentMight = value;
+        }
+
+        public float CurrentProjectilSpeed { get => currentProjectileSpeed; set => currentProjectileSpeed = value;
+        }
+
+        public float CurrentMagnet { get => currentMagnet;set => currentMagnet = value; }
 
         //Experience and level of the player
         [Header("Experience/Level")]
@@ -48,6 +62,7 @@ namespace Vampire
             currentMoveSpeed = characterData.MoveSpeed;
             currentMight = characterData.Might;
             currentProjectileSpeed = characterData.ProjectileSpeed;
+            currentMagnet = characterData.Magnet;
         }
 
         void Start()
@@ -67,6 +82,8 @@ namespace Vampire
             {
                 isInvincible = false;
             }
+
+            Recover();
         }
 
         public void IncreaseExperience(int amount)
@@ -128,6 +145,20 @@ namespace Vampire
                 currentHealth += amount;
 
                 //Make sure the player's health doesn't exceed their maximum health
+                if (currentHealth > characterData.MaxHealth)
+                {
+                    currentHealth = characterData.MaxHealth;
+                }
+            }
+        }
+
+        void Recover()
+        {
+            if (currentHealth < characterData.MaxHealth)
+            {
+                currentHealth += currentRecovery * Time.deltaTime; 
+
+                // Make sure the player's health doesn't exceed their maximum health
                 if (currentHealth > characterData.MaxHealth)
                 {
                     currentHealth = characterData.MaxHealth;

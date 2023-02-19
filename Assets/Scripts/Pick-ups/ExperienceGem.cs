@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Vampire
 {
-    public class ExperienceGem : MonoBehaviour, ICollectible
+    public class ExperienceGem : Pickup, ICollectible
     {
         public int experienceGranted;
 
@@ -13,7 +13,8 @@ namespace Vampire
         {
             PlayerStat player = FindObjectOfType<PlayerStat>();
             player.IncreaseExperience(experienceGranted);
-            Destroy(gameObject);
         }
+
+        
     }
 }

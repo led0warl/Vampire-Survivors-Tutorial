@@ -15,6 +15,11 @@ namespace Vampire
         float currentHealth;
         float currentDamage;
 
+        public float CurrentMoveSpeed { get { return currentMoveSpeed; } set { currentMoveSpeed = value; } }
+        public float CurrentHealth { get=>currentHealth; set { currentHealth = value; } }
+        
+        public float CurrentDamage { get => currentDamage; set { currentDamage = value; } }
+
         void Awake()
         {
             //Assign the variable

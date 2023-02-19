@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Vampire
 {
-    public class HealthPotion : MonoBehaviour, ICollectible
+    public class HealthPotion : Pickup, ICollectible
     {
         public int healthToRestore;
 
@@ -12,7 +12,6 @@ namespace Vampire
         {
             PlayerStat player = FindObjectOfType<PlayerStat>();
             player.RestoreHealth(healthToRestore);
-            Destroy(gameObject);
         }
     }
 }

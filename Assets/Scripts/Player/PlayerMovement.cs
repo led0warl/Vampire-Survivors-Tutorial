@@ -15,11 +15,11 @@ namespace Vampire
         // References
         Rigidbody2D rb;
         PlayerInput playInput;
+        PlayerStat player;
 
-        [SerializeField]
-        CharacterScriptableObject characterData;
+        
 
-        public float MoveSpeed { get => characterData.MoveSpeed;  }
+        public float MoveSpeed { get => player.CurrentMoveSpeed;  }
         public Vector2 MoveDir { get=>moveDir; set => moveDir = value; }
 
         [HideInInspector]
@@ -29,6 +29,7 @@ namespace Vampire
         // Start is called before the first frame update
         void Start()
         {
+            player = GetComponent<PlayerStat>();
             rb = GetComponent<Rigidbody2D>();
             playInput= GetComponent<PlayerInput>();
         }
@@ -48,7 +49,7 @@ namespace Vampire
 
         public void Move()
         {
-            rb.velocity = new Vector2(moveDir.x * characterData.MoveSpeed, moveDir.y * MoveSpeed);
+            rb.velocity = new Vector2(moveDir.x * player.CurrentMoveSpeed, moveDir.y * MoveSpeed);
         }
     }
 }
