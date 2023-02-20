@@ -55,10 +55,11 @@ namespace StatSystem
                 finalValue = Mathf.Min(finalValue, m_Definition.cap);
             }
 
+            // Check  
             if (m_Value != finalValue)
             {
                 m_Value = finalValue;
-                valueChanged?.Invoke();
+                valueChanged?.Invoke(); 
             }
         }
 
