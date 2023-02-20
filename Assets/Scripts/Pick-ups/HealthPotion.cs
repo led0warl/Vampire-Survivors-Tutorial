@@ -13,5 +13,7 @@ namespace Vampire
             PlayerStat player = FindObjectOfType<PlayerStat>();
             player.RestoreHealth(healthToRestore);
         }
+
+        
     }
 }

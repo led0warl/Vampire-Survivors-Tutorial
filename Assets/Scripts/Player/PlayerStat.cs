@@ -30,6 +30,10 @@ namespace Vampire
 
         public float CurrentMagnet { get => currentMagnet;set => currentMagnet = value; }
 
+
+        //Spawned Weapon
+        public List<GameObject> spawnedWeapons;
+
         //Experience and level of the player
         [Header("Experience/Level")]
         int experience = 0;
@@ -56,6 +60,10 @@ namespace Vampire
 
         void Awake()
         {
+
+            characterData = CharacterSelector.GetDta();
+            CharacterSelector.instance.DestroySingleton();
+
             //Assign the variables
             currentHealth = characterData.MaxHealth;
             currentRecovery = characterData.Recovery;
@@ -63,6 +71,9 @@ namespace Vampire
             currentMight = characterData.Might;
             currentProjectileSpeed = characterData.ProjectileSpeed;
             currentMagnet = characterData.Magnet;
+
+            //Spawn the starting weapon
+            SpawnWeapon(characterData.StartingWeapon); 
         }
 
         void Start()
@@ -164,6 +175,15 @@ namespace Vampire
                     currentHealth = characterData.MaxHealth;
                 }
             }
+        }
+
+
+        public void SpawnWeapon(GameObject weapon)
+        {
+            //Spawn the starting weapon
+            GameObject spawnedWeapon = Instantiate(weapon,transform.position, Quaternion.identity);
+            spawnedWeapon.transform.SetParent(transform); // Set the weapon to be a child of the player
+            spawnedWeapons.Add(spawnedWeapon); // Add it to the list of spawned weapons
         }
     }
 }
