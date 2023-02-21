@@ -28,6 +28,11 @@ namespace StatSystem
             }
         }
 
+        private void OnDestroy()
+        {
+            willUninitialize?.Invoke();
+        }
+
         private void Initialize()
         {
             foreach (StatDefinition definition in m_StatDatabase.stats)
@@ -40,5 +45,7 @@ namespace StatSystem
                 m_Stats.Add(definition.name, new Attribute(definition));
             }
         }
+
+        
     }
 }
