@@ -22,7 +22,7 @@ namespace StatSystem.Tests
         {
             yield return null;
             StatController statController = GameObject.FindObjectOfType<StatController>();
-            Stat physicalAttack = statController.Stats["PhysicalAttack"];
+            Stat physicalAttack = statController.stats["PhysicalAttack"];
             Assert.AreEqual(0, physicalAttack.value);
             physicalAttack.AddModifier(new StatModifier
             {
@@ -38,7 +38,7 @@ namespace StatSystem.Tests
         {
             yield return null;
             StatController statController = GameObject.FindObjectOfType<StatController>();
-            Stat attackSpeed = statController.Stats["AttackSpeed"];
+            Stat attackSpeed = statController.stats["AttackSpeed"];
             Assert.AreEqual(1,attackSpeed.value);
             attackSpeed.AddModifier(new StatModifier
             {

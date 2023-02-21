@@ -11,7 +11,7 @@ namespace StatSystem
         [SerializeField]
         private StatDatabase m_StatDatabase;
         protected Dictionary<string, Stat> m_Stats = new Dictionary<string, Stat>(StringComparer.OrdinalIgnoreCase);
-        public Dictionary<string, Stat> Stats => m_Stats;
+        public Dictionary<string, Stat> stats => m_Stats;
 
         private bool m_IsInitialized;
         public bool isInitialized => m_IsInitialized;
