@@ -17,3 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f37d94c99dc141645a5c7a2123f52805, type: 2}
   attributes:
   - {fileID: 11400000, guid: c4bc0301fb76bf1479f55556fb2a2b51, type: 2}
+  primaryStats:
+  - {fileID: 11400000, guid: 7331d1cdf8c625a4cafc3dfebad4716f, type: 2}
