@@ -12,4 +12,4 @@ namespace Core
             this.type = type;
         }
     }
-}
+} 
