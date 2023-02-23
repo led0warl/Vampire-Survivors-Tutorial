@@ -43,6 +43,19 @@ namespace Core
             }
         }
 
+        public List<T> FindNodesOfType<T>()
+        {
+            List<T> nodesOfType = new List<T>();
+            foreach(CodeFunctionNode node in nodes) {
+                if (node is T nodeOfType)
+                {
+                    nodesOfType.Add(nodeOfType);
+                }
+            }
+
+            return nodesOfType;
+        }
+
         public void AddChild(CodeFunctionNode parent, CodeFunctionNode child, string portName)
         {
             if(parent is IntermediateNode intermediateNode)

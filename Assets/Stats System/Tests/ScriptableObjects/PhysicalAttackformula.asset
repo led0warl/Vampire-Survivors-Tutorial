@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5204121056580823510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d9e85d847c6104a97f126083154e2d, type: 3}
+  m_Name: Scalar
+  m_EditorClassIdentifier: 
+  position: {x: 94, y: 31}
+  guid: 0c761867e072c4a49834ea6aff75d172
+  m_Value: 3
+--- !u!114 &-3090521660624983469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb621295b8250694fa3e02f1e0edf7e2, type: 3}
+  m_Name: Multiply
+  m_EditorClassIdentifier: 
+  position: {x: 248, y: 93}
+  guid: b5c48c6d8e1745d4c8c0c0fa0c5e1e2f
+  factorA: {fileID: -5204121056580823510}
+--- !u!114 &-2251732872098344930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c27b16b1a799b41bd6c6fcbc33ed7a, type: 3}
+  m_Name: stat
+  m_EditorClassIdentifier: 
+  position: {x: 119, y: 140}
+  guid: a25fd58fe07850c40a5c8b27df2b4b46
+  m_StatName: Strength
+--- !u!114 &-1299851067977598272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed6f48d92ed065439145b7f69f92588, type: 3}
+  m_Name: ResultNode
+  m_EditorClassIdentifier: 
+  position: {x: 377.04, y: 41.160004}
+  guid: 87bc266bbe33b4b47af42a38337fdfbe
+  child: {fileID: -3090521660624983469}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ad436ea262c0e42934b920760aa769, type: 3}
+  m_Name: PhysicalAttackformula
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -1299851067977598272}
+  nodes:
+  - {fileID: -1299851067977598272}
+  - {fileID: -2251732872098344930}
+  - {fileID: -5204121056580823510}
+  - {fileID: -3090521660624983469}

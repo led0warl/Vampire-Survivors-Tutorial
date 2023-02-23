@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BaseValue: 0
   m_Cap: -1
+  m_Formula: {fileID: 11400000, guid: c75a870c6822c4147bfd0c1194c9f5d8, type: 2}

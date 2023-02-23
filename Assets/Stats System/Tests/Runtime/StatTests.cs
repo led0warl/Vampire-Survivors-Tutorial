@@ -47,5 +47,18 @@ namespace StatSystem.Tests
             });
             Assert.AreEqual(3,attackSpeed.value);
         }
+
+        [UnityTest]
+        public IEnumerator Stat_WhenStrengthIncreased_UpdatedPhysicalAttack()
+        {
+            yield return null;
+            StatController statController = GameObject.FindObjectOfType<StatController>();
+            PrimaryStat strength = statController.stats["Strength"] as PrimaryStat;
+            Stat physicalAttack = statController.stats["PhysicalAttack"];
+            Assert.AreEqual(1,strength.value);
+            Assert.AreEqual(3,physicalAttack.value);
+            strength.Add(3);
+            Assert.AreEqual(12,physicalAttack.value);
+        }
     }
 }

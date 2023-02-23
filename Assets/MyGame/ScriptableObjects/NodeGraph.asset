@@ -34,10 +34,6 @@ MonoBehaviour:
   - {fileID: 8330863746178772599}
   - {fileID: 8492067342129095191}
   - {fileID: 3238637212594457044}
-  - {fileID: 9090835830784849187}
-  - {fileID: 5328830738202206358}
-  - {fileID: 6747427348574099766}
-  - {fileID: -772565109000037430}
 --- !u!114 &3238637212594457044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,9 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed6f48d92ed065439145b7f69f92588, type: 3}
   m_Name: ResultNode
   m_EditorClassIdentifier: 
-  position: {x: 417.63998, y: 179.72}
+  position: {x: 456, y: 229}
   guid: 7dd75e7c33ddbfe4aafbbcacb5e90976
-  child: {fileID: 9090835830784849187}
+  child: {fileID: 0}
 --- !u!114 &6747427348574099766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade28ae95a5031043924933b870bd7b5, type: 3}
   m_Name: Add
   m_EditorClassIdentifier: 
-  position: {x: 267, y: 288}
+  position: {x: 267, y: 289}
   guid: db98310e70382d341bed29dd43435d2c
   addendA: {fileID: 8330863746178772599}
 --- !u!114 &9090835830784849187
