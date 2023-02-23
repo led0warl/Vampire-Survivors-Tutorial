@@ -2,7 +2,7 @@
 
 namespace Core.Editor.Nodes
 {
-    [NodeType(typeof(ReslutNode))]
+    [NodeType(typeof(ResultNode))]
     public class ResultNodeView : NodeView
     {
         public ResultNodeView()

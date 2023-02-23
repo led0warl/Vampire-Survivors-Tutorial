@@ -1,4 +1,5 @@
 using Core.Nodes;
+using GluonGui.Dialog;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,5 +21,41 @@ namespace Core
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssets();
         }
+
+        public void DeleteNode(CodeFunctionNode node)
+        {
+            nodes.Remove(node);
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssets();
+        }
+
+        public void RemoveChild(CodeFunctionNode parent, CodeFunctionNode child, string portName)
+        {
+            if (parent is IntermediateNode intermediateNode)
+            {
+                intermediateNode.RemoveChild(child,portName);
+                EditorUtility.SetDirty(intermediateNode);
+            }
+            else if (parent is ResultNode resultNode)
+            {
+                resultNode.child = null;
+                EditorUtility.SetDirty(resultNode);
+            }
+        }
+
+        public void AddChild(CodeFunctionNode parent, CodeFunctionNode child, string portName)
+        {
+            if(parent is IntermediateNode intermediateNode)
+            {
+                intermediateNode.AddChild(child,portName);
+                EditorUtility.SetDirty(intermediateNode);
+            }
+            else if (parent is ResultNode resultNode)
+            {
+                resultNode.child = child;
+                EditorUtility.SetDirty(resultNode);
+            }
+        }
+
     }
 }

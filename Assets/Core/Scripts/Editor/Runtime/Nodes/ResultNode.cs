@@ -2,7 +2,7 @@
 
 namespace Core.Nodes
 {
-    public class ReslutNode : CodeFunctionNode
+    public class ResultNode : CodeFunctionNode
     {
         [HideInInspector]
         public CodeFunctionNode child;

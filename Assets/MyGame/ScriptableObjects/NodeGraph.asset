@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5979553036412869854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d9e85d847c6104a97f126083154e2d, type: 3}
-  m_Name: Scalar
-  m_EditorClassIdentifier: 
-  position: {x: 328, y: 320}
-  guid: 818f2b2c05628004f94b83f0ed85e58b
-  m_Value: 0
---- !u!114 &-5823278523800005217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: ReslutNode
-  m_EditorClassIdentifier: Core:Core.Nodes:ReslutNode
-  position: {x: 0, y: 0}
-  guid: 1c306d1accd108043a60d85333b83392
-  child: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ad436ea262c0e42934b920760aa769, type: 3}
   m_Name: NodeGraph
   m_EditorClassIdentifier: 
-  rootNode: {fileID: -5823278523800005217}
+  rootNode: {fileID: 5616620535061850694}
   nodes:
-  - {fileID: -5823278523800005217}
-  - {fileID: -5979553036412869854}
+  - {fileID: 5616620535061850694}
+  - {fileID: 8330863746178772599}
+--- !u!114 &5616620535061850694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed6f48d92ed065439145b7f69f92588, type: 3}
+  m_Name: ResultNode
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 0}
+  guid: 7dd75e7c33ddbfe4aafbbcacb5e90976
+  child: {fileID: 0}
+--- !u!114 &8330863746178772599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d9e85d847c6104a97f126083154e2d, type: 3}
+  m_Name: Scalar
+  m_EditorClassIdentifier: 
+  position: {x: 308, y: 172}
+  guid: b8593b950b5907b40b98098abdf56fa9
+  m_Value: 0
