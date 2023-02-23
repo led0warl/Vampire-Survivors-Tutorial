@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-772565109000037430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612b6be940cd5fe4cae90256e9874fd0, type: 3}
+  m_Name: Subtract
+  m_EditorClassIdentifier: 
+  position: {x: 267, y: -44}
+  guid: 89813744a30a313488da501e2346ce62
+  minuted: {fileID: 0}
+  subtrahend: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,6 +32,42 @@ MonoBehaviour:
   nodes:
   - {fileID: 5616620535061850694}
   - {fileID: 8330863746178772599}
+  - {fileID: 8492067342129095191}
+  - {fileID: 3238637212594457044}
+  - {fileID: 9090835830784849187}
+  - {fileID: 5328830738202206358}
+  - {fileID: 6747427348574099766}
+  - {fileID: -772565109000037430}
+--- !u!114 &3238637212594457044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d9e85d847c6104a97f126083154e2d, type: 3}
+  m_Name: Scalar
+  m_EditorClassIdentifier: 
+  position: {x: 13, y: 300}
+  guid: eb510de53384af7408cca8034e141b9a
+  m_Value: 0
+--- !u!114 &5328830738202206358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb621295b8250694fa3e02f1e0edf7e2, type: 3}
+  m_Name: Multiply
+  m_EditorClassIdentifier: 
+  position: {x: 371, y: 95}
+  guid: b6cd0d25943677e43afbcf4c1cab1c5c
+  factorA: {fileID: 0}
 --- !u!114 &5616620535061850694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,9 +80,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed6f48d92ed065439145b7f69f92588, type: 3}
   m_Name: ResultNode
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
+  position: {x: 417.63998, y: 179.72}
   guid: 7dd75e7c33ddbfe4aafbbcacb5e90976
-  child: {fileID: 0}
+  child: {fileID: 9090835830784849187}
+--- !u!114 &6747427348574099766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103e1fc4c1f4e09458e585ad13b9eee7, type: 3}
+  m_Name: Power
+  m_EditorClassIdentifier: 
+  position: {x: 439, y: -75.51997}
+  guid: 4f687afd2061a5b46ba376f0ba69fdb0
+  exponent: {fileID: 0}
+  base: {fileID: 0}
 --- !u!114 &8330863746178772599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +111,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d9e85d847c6104a97f126083154e2d, type: 3}
   m_Name: Scalar
   m_EditorClassIdentifier: 
-  position: {x: 308, y: 172}
+  position: {x: 50, y: 154}
   guid: b8593b950b5907b40b98098abdf56fa9
   m_Value: 0
+--- !u!114 &8492067342129095191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade28ae95a5031043924933b870bd7b5, type: 3}
+  m_Name: Add
+  m_EditorClassIdentifier: 
+  position: {x: 267, y: 288}
+  guid: db98310e70382d341bed29dd43435d2c
+  addendA: {fileID: 8330863746178772599}
+--- !u!114 &9090835830784849187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b901ac7f15cfd234f88ad8b29a7244d6, type: 3}
+  m_Name: Divide
+  m_EditorClassIdentifier: 
+  position: {x: 219, y: 97}
+  guid: f11e200d62ffae643aed567fc40c6a28
+  dividend: {fileID: 0}
+  divisor: {fileID: 0}
