@@ -1,6 +1,8 @@
 using Core.Nodes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Core
@@ -10,5 +12,13 @@ namespace Core
     {
         public CodeFunctionNode rootNode;
         public List<CodeFunctionNode> nodes = new List<CodeFunctionNode>();
+
+        public void AddNode(CodeFunctionNode node)
+        {
+            nodes.Add(node);
+            AssetDatabase.AddObjectToAsset(node, this);
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssets();
+        }
     }
 }
