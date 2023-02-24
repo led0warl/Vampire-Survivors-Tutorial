@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Core.Editor.Nodes
 {
     [NodeType(typeof(AddNode))]
-    [Title("Math","Add")]
+    [Title("Math", "Add")]
     public class AddNodeView : NodeView
     {
         public AddNodeView()

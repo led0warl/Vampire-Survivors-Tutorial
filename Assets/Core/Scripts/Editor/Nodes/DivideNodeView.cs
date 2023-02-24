@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Core.Editor.Nodes
 {
     [NodeType(typeof(DivideNode))]
-    [Title("Math","Divide")]
+    [Title("Math", "Divide")]
     public class DivideNodeView : NodeView
     {
         public DivideNodeView()

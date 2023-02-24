@@ -1,6 +1,5 @@
+﻿using System.Collections;
 using NUnit.Framework;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,12 +7,13 @@ using UnityEngine.TestTools;
 
 namespace LevelSystem.Tests
 {
-    public class LevelControllerTests 
+    public class LevelControllerTests
     {
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            EditorSceneManager.LoadSceneInPlayMode("Assets/LevelSystem/Tests/Scenes/Tests.unity",new LoadSceneParameters(LoadSceneMode.Single));
+            EditorSceneManager.LoadSceneInPlayMode("Assets/LevelSystem/Tests/Scenes/Test.unity",
+                new LoadSceneParameters(LoadSceneMode.Single));
         }
 
         [UnityTest]

@@ -5,7 +5,7 @@ namespace Core.Editor.Nodes
 {
     [NodeType(typeof(MultiplyNode))]
     [Title("Math", "Multiply")]
-    public class MultiplyNodeView : NodeView
+    public class MultiplyNodeView : NodeView 
     {
         public MultiplyNodeView()
         {

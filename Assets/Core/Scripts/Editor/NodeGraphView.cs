@@ -1,8 +1,8 @@
-﻿using Core.Editor.Nodes;
-using Core.Nodes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Editor.Nodes;
+using Core.Nodes;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -12,7 +12,7 @@ namespace Core.Editor
 {
     public class NodeGraphView : GraphView
     {
-        public new class UxmlFactory : UxmlFactory<NodeGraphView, UxmlTraits> { }
+        public new class UxmlFactory : UxmlFactory<NodeGraphView, UxmlTraits> {}
 
         private NodeGraph m_NodeGraph;
         public Action<NodeView> nodeSelected;
@@ -23,16 +23,16 @@ namespace Core.Editor
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
-
+            
             SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
 
             GridBackground gridBackground = new GridBackground();
             Insert(0, gridBackground);
             gridBackground.StretchToParentSize();
 
-            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Core/Scripts/Editor/NodeGraphEditorWindow.uss");
+            var styleSheet =
+                AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Core/Scripts/Editor/NodeGraphEditorWindow.uss");
             styleSheets.Add(styleSheet);
-
         }
 
         internal void PopulateView(NodeGraph nodeGraph)
@@ -43,16 +43,16 @@ namespace Core.Editor
             DeleteElements(graphElements.ToList());
             graphViewChanged += OnGraphViewChanged;
 
-            if(m_NodeGraph.rootNode == null)
+            if (m_NodeGraph.rootNode == null)
             {
                 m_NodeGraph.rootNode = ScriptableObject.CreateInstance<ResultNode>();
                 m_NodeGraph.rootNode.name = nodeGraph.rootNode.GetType().Name;
                 m_NodeGraph.rootNode.guid = GUID.Generate().ToString();
                 m_NodeGraph.AddNode(m_NodeGraph.rootNode);
             }
-
+            
             m_NodeGraph.nodes.ForEach(n => CreateAndAddNodeView(n));
-
+            
             m_NodeGraph.nodes.ForEach(n =>
             {
                 if (n is IntermediateNode intermediateNode)
@@ -75,7 +75,6 @@ namespace Core.Editor
                         AddElement(edge);
                     }
                 }
-
             });
         }
 
@@ -91,7 +90,9 @@ namespace Core.Editor
                 graphViewChange.elementsToRemove.ForEach(element =>
                 {
                     if (element is NodeView nodeView)
-                    { m_NodeGraph.DeleteNode(nodeView.node); }
+                    {
+                        m_NodeGraph.DeleteNode(nodeView.node);
+                    }
                     else if (element is Edge edge)
                     {
                         NodeView parentView = edge.input.node as NodeView;
@@ -116,11 +117,12 @@ namespace Core.Editor
 
         private void CreateAndAddNodeView(CodeFunctionNode node)
         {
-            Type[] types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => assembly.GetTypes()).Where(type=>typeof(NodeView).IsAssignableFrom(type) && type.IsClass && !type.IsAbstract).ToArray();
+            Type[] types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => assembly.GetTypes())
+                .Where(type => typeof(NodeView).IsAssignableFrom(type) && type.IsClass && !type.IsAbstract).ToArray();
 
             foreach (Type type in types)
             {
-                if(type.GetCustomAttributes(typeof(NodeType),false)is NodeType[] attrs && attrs.Length> 0)
+                if (type.GetCustomAttributes(typeof(NodeType), false) is NodeType[] attrs && attrs.Length > 0)
                 {
                     if (attrs[0].type == node.GetType())
                     {
@@ -137,13 +139,14 @@ namespace Core.Editor
 
         public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
         {
-            return ports.ToList().Where(endPort => endPort.direction != startPort.direction && endPort.node != startPort.node).ToList();
+            return ports.ToList()
+                .Where(endPort => endPort.direction != startPort.direction && endPort.node != startPort.node).ToList();
         }
 
         internal void AddNodeView(NodeView nodeView)
         {
             nodeView.nodeSelected = nodeSelected;
-            AddElement(nodeView); 
+            AddElement(nodeView);
         }
     }
 }

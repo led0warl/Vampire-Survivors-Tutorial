@@ -1,6 +1,6 @@
-using Core.Nodes;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Core.Nodes;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -22,14 +22,14 @@ namespace Core.Editor.Nodes
             RefreshPorts();
             return outputPort;
         }
-
-        protected Port CreateInputPort(string portName="",Port.Capacity capacity = Port.Capacity.Single)
+        
+        protected Port CreateInputPort(string portName = "", Port.Capacity capacity = Port.Capacity.Single)
         {
-            Port inputPort = InstantiatePort(Orientation.Horizontal,Direction.Input, capacity, typeof(float));
+            Port inputPort = InstantiatePort(Orientation.Horizontal, Direction.Input, capacity, typeof(float));
             inputPort.portName = portName;
             inputContainer.Add(inputPort);
             RefreshPorts();
-            return inputPort; 
+            return inputPort;
         }
 
         public override void OnSelected()
@@ -45,6 +45,5 @@ namespace Core.Editor.Nodes
             node.position.y = newPos.yMin;
             EditorUtility.SetDirty(node);
         }
-
     }
 }

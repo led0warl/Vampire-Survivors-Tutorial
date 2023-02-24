@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Core.Editor.Nodes
 {
     [NodeType(typeof(ScalarNode))]
-    [Title("Math","Scalar")]
+    [Title("Math", "Scalar")]
     public class ScalarNodeView : NodeView
     {
         public ScalarNodeView()

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-772565109000037430
+--- !u!114 &-1277514583168125298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 612b6be940cd5fe4cae90256e9874fd0, type: 3}
-  m_Name: Subtract
+  m_Script: {fileID: 11500000, guid: 0dc85815fbb647f6ad4f2ac539232d6a, type: 3}
+  m_Name: Scalar
   m_EditorClassIdentifier: 
-  position: {x: 267, y: -44}
-  guid: 89813744a30a313488da501e2346ce62
-  minuted: {fileID: 0}
-  subtrahend: {fileID: 0}
+  position: {x: 35.24002, y: 190}
+  guid: 7768aeaf447695a4cb3ed7f1763961e5
+  m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25,16 +24,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad436ea262c0e42934b920760aa769, type: 3}
+  m_Script: {fileID: 11500000, guid: 96dedc780d9e481ea58ff91b36bc723b, type: 3}
   m_Name: NodeGraph
   m_EditorClassIdentifier: 
-  rootNode: {fileID: 5616620535061850694}
+  rootNode: {fileID: 5835059491676987227}
   nodes:
-  - {fileID: 5616620535061850694}
-  - {fileID: 8330863746178772599}
-  - {fileID: 8492067342129095191}
-  - {fileID: 3238637212594457044}
---- !u!114 &3238637212594457044
+  - {fileID: 5835059491676987227}
+  - {fileID: -1277514583168125298}
+  - {fileID: 1536273220557436512}
+  - {fileID: 6456214278453443478}
+--- !u!114 &1536273220557436512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,89 +42,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d9e85d847c6104a97f126083154e2d, type: 3}
-  m_Name: Scalar
-  m_EditorClassIdentifier: 
-  position: {x: 13, y: 300}
-  guid: eb510de53384af7408cca8034e141b9a
-  m_Value: 0
---- !u!114 &5328830738202206358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb621295b8250694fa3e02f1e0edf7e2, type: 3}
-  m_Name: Multiply
-  m_EditorClassIdentifier: 
-  position: {x: 371, y: 95}
-  guid: b6cd0d25943677e43afbcf4c1cab1c5c
-  factorA: {fileID: 0}
---- !u!114 &5616620535061850694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ed6f48d92ed065439145b7f69f92588, type: 3}
-  m_Name: ResultNode
-  m_EditorClassIdentifier: 
-  position: {x: 456, y: 229}
-  guid: 7dd75e7c33ddbfe4aafbbcacb5e90976
-  child: {fileID: 0}
---- !u!114 &6747427348574099766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103e1fc4c1f4e09458e585ad13b9eee7, type: 3}
-  m_Name: Power
-  m_EditorClassIdentifier: 
-  position: {x: 439, y: -75.51997}
-  guid: 4f687afd2061a5b46ba376f0ba69fdb0
-  exponent: {fileID: 0}
-  base: {fileID: 0}
---- !u!114 &8330863746178772599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d9e85d847c6104a97f126083154e2d, type: 3}
-  m_Name: Scalar
-  m_EditorClassIdentifier: 
-  position: {x: 50, y: 154}
-  guid: b8593b950b5907b40b98098abdf56fa9
-  m_Value: 0
---- !u!114 &8492067342129095191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade28ae95a5031043924933b870bd7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 990d4eee0a2b42609345d22c5b18dd04, type: 3}
   m_Name: Add
   m_EditorClassIdentifier: 
-  position: {x: 267, y: 289}
-  guid: db98310e70382d341bed29dd43435d2c
-  addendA: {fileID: 8330863746178772599}
---- !u!114 &9090835830784849187
+  position: {x: 272, y: 264}
+  guid: 2738a79a54b55d2478beacd11c629029
+  addendA: {fileID: -1277514583168125298}
+  addendB: {fileID: 6456214278453443478}
+--- !u!114 &5835059491676987227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,10 +58,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b901ac7f15cfd234f88ad8b29a7244d6, type: 3}
-  m_Name: Divide
+  m_Script: {fileID: 11500000, guid: d19ffb4285114742bc03537d53b2b4f2, type: 3}
+  m_Name: ResultNode
   m_EditorClassIdentifier: 
-  position: {x: 219, y: 97}
-  guid: f11e200d62ffae643aed567fc40c6a28
-  dividend: {fileID: 0}
-  divisor: {fileID: 0}
+  position: {x: 486, y: 215}
+  guid: c407a15e59b9a1f4f9f95914834a8671
+  child: {fileID: 1536273220557436512}
+--- !u!114 &6456214278453443478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc85815fbb647f6ad4f2ac539232d6a, type: 3}
+  m_Name: Scalar
+  m_EditorClassIdentifier: 
+  position: {x: 42, y: 289}
+  guid: ece4e7fbed8796a4fb0ef36c18587d0a
+  m_Value: 0

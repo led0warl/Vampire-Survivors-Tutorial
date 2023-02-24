@@ -1,22 +1,23 @@
-﻿using Core;
-using LevelSystem.Nodes;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Core;
+using LevelSystem.Nodes;
 using UnityEngine;
 
 namespace LevelSystem
 {
     public class LevelController : MonoBehaviour, ILevelable
     {
-
         [SerializeField] private int m_Level = 1;
         [SerializeField] private int m_CurrentExperience;
         [SerializeField] private NodeGraph m_RequiredExperienceFormula;
 
         private bool m_IsInitialized;
 
-
         public int level => m_Level;
+        public event Action levelChanged;
+        public event Action currentExperienceChanged;
+
         public int currentExperience
         {
             get => m_CurrentExperience;
@@ -36,11 +37,9 @@ namespace LevelSystem
                 }
             }
         }
+
         public int requiredExperience => Mathf.RoundToInt(m_RequiredExperienceFormula.rootNode.value);
         public bool isInitialized => m_IsInitialized;
-
-        public event Action levelChanged;
-        public event Action currentExperienceChanged;
         public event Action initialized;
         public event Action willUninitialize;
 
@@ -48,14 +47,13 @@ namespace LevelSystem
         {
             if (!m_IsInitialized)
             {
-                Initialized();
+                Initialize();
             }
         }
 
-        private void Initialized()
+        private void Initialize()
         {
             List<LevelNode> levelNodes = m_RequiredExperienceFormula.FindNodesOfType<LevelNode>();
-
             foreach (LevelNode levelNode in levelNodes)
             {
                 levelNode.levelable = this;

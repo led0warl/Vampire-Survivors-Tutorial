@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 namespace Core.Editor
 {
-    public class ScriptableObjectCollectionEditor<T>: VisualElement where T: ScriptableObject
+    public class ScriptableObjectCollectionEditor<T> : VisualElement where T: ScriptableObject
     {
         protected ScriptableObject m_Target;
         protected List<T> m_Items;
@@ -21,7 +21,8 @@ namespace Core.Editor
 
         public ScriptableObjectCollectionEditor()
         {
-            var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Core/Scripts/Editor/ScriptableObjectCollectionEditor.uxml");
+            var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
+                "Assets/Core/Scripts/Editor/ScriptableObjectCollectionEditor.uxml");
             visualTree.CloneTree(this);
 
             m_Inspector = this.Q<Inspector>();
@@ -29,7 +30,6 @@ namespace Core.Editor
             m_ToolbarSearchField = this.Q<ToolbarSearchField>();
             m_CreateButton = this.Q<Button>("create-button");
             m_NameField = this.Q<PropertyField>("name-field");
-
         }
 
         public void Initialize(ScriptableObject target, List<T> items)
@@ -62,23 +62,21 @@ namespace Core.Editor
                         Remove(m_FilteredListView[i]);
                     });
                 }));
-                SerializedObject serializeObject = new SerializedObject(m_FilteredListView[i]);
-                SerializedProperty serializedProperty = serializeObject.FindProperty("m_Name");
+                SerializedObject serializedObject = new SerializedObject(m_FilteredListView[i]);
+                SerializedProperty serializedProperty = serializedObject.FindProperty("m_Name");
                 label.BindProperty(serializedProperty);
             };
-
             m_ListView.bindItem = bindItem;
             m_ListView.itemsSource = m_FilteredListView = m_Items;
 
             m_CreateButton.clicked += Create;
-
+            
             m_ToolbarSearchField.RegisterCallback<ChangeEvent<string>>(evt =>
             {
-                m_ListView.itemsSource = m_FilteredListView = m_Items.Where(item => item.name.StartsWith(evt.newValue,StringComparison.OrdinalIgnoreCase)).ToList();
-
+                m_ListView.itemsSource = m_FilteredListView = m_Items
+                    .Where(item => item.name.StartsWith(evt.newValue, StringComparison.OrdinalIgnoreCase)).ToList();
                 m_ListView.Rebuild();
             });
-
         }
 
         private void Duplicate(T item)
@@ -97,12 +95,13 @@ namespace Core.Editor
 
         private void Create()
         {
-            Type[] types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => assembly.GetTypes()).Where(type => typeof(T).IsAssignableFrom(type) && type.IsClass && !type.IsAbstract).ToArray();
+            Type[] types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => assembly.GetTypes())
+                .Where(type => typeof(T).IsAssignableFrom(type) && type.IsClass && !type.IsAbstract).ToArray();
 
             if (types.Length > 1)
             {
                 GenericMenu menu = new GenericMenu();
-                foreach(Type type in types)
+                foreach (Type type in types)
                 {
                     menu.AddItem(new GUIContent(ObjectNames.NicifyVariableName(type.Name)), false, delegate
                     {
@@ -136,12 +135,13 @@ namespace Core.Editor
         {
             SerializedObject serializedObject = new SerializedObject(item);
             m_Inspector.Bind(serializedObject);
-            m_NameField.Bind(serializedObject); 
+            m_NameField.Bind(serializedObject);
         }
 
         private void Remove(T item)
         {
-            if (EditorUtility.DisplayDialog("Delete Item", "Are you sure you want to delete " + item.name + "?", "Yes", "No"))
+            if (EditorUtility.DisplayDialog("Delete Item", "Are you sure you want to delete " + item.name + "?", "Yes",
+                "No"))
             {
                 ScriptableObject.DestroyImmediate(item, true);
                 AssetDatabase.SaveAssets();

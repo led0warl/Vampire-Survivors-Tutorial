@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace LevelSystem
 {
@@ -7,7 +7,7 @@ namespace LevelSystem
         int level { get; }
         event Action levelChanged;
         event Action currentExperienceChanged;
-        int currentExperience { get; }
+        int currentExperience { get; set; }
         int requiredExperience { get; }
         bool isInitialized { get; }
         event Action initialized;

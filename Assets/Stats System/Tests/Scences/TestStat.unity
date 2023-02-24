@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 954233059}
+  - component: {fileID: 954233061}
   - component: {fileID: 954233060}
   m_Layer: 0
   m_Name: Player
@@ -164,7 +165,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 954233058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 861fb2bf684a3e247b62112464b87c3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 07674f90c104b464ea95e87721b6d188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Level: 1
+  m_CurrentExperience: 0
+  m_RequiredExperienceFormula: {fileID: 11400000, guid: 9325d914ea1aae04793d0c22f7be0ed7, type: 2}
+  m_IsInitialized: 0
+--- !u!114 &954233061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954233058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfb001973b25a749b18e6c75acf134a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_StatDatabase: {fileID: 11400000, guid: 40cf620ba0ccda14584e4ebd781be7ef, type: 2}
+  m_IsInitialized: 0
+  m_StatPoints: 5
