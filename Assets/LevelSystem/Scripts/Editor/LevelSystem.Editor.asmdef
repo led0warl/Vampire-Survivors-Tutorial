@@ -1,0 +1,18 @@
+{
+    "name": "LevelSystem.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4aabe4911c6a18641808f06694f37c08",
+        "GUID:3f655a08bcbc0124d9665c77f76445e7",
+        "GUID:a453b3f3a8391d347b36f344b8e844f2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
