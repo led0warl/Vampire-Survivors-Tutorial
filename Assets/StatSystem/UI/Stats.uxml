@@ -56,8 +56,8 @@
                     <ui:Button text="+" display-tooltip-when-elided="true" name="increment-button" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="charisma" style="flex-direction: row; justify-content: space-between;">
-                <ui:Label text="Charisma" display-tooltip-when-elided="true" name="label" style="font-size: 16px;" />
+            <ui:VisualElement name="constitution" style="flex-direction: row; justify-content: space-between;">
+                <ui:Label text="Constitution" display-tooltip-when-elided="true" name="label" style="font-size: 16px;" />
                 <ui:VisualElement name="content" style="flex-direction: row;">
                     <ui:Label text="1" display-tooltip-when-elided="true" name="value" style="font-size: 16px;" />
                     <ui:Button text="+" display-tooltip-when-elided="true" name="increment-button" />

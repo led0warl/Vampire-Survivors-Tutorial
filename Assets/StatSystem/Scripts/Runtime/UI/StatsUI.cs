@@ -15,7 +15,7 @@ namespace StatSystem.UI
 
         private void Awake()
         {
-            m_UIDocument= GetComponent<UIDocument>();
+            m_UIDocument = GetComponent<UIDocument>();
             m_Levelable = m_Controller.GetComponent<ILevelable>();
         }
 
@@ -37,10 +37,10 @@ namespace StatSystem.UI
             m_Levelable.levelChanged += () =>
             {
                 experienceValue.text = $"{m_Levelable.currentExperience} / {m_Levelable.requiredExperience}";
-                levelValue.text = m_Levelable.level.ToString() ;
+                levelValue.text = m_Levelable.level.ToString();
             };
 
-            VisualElement primaryStats = root.Q("primary-stat");
+            VisualElement primaryStats = root.Q("primary-stats");
             for (int i = 0; i < primaryStats.childCount; i++)
             {
                 Stat stat = m_Controller.stats[primaryStats[i].name];
@@ -48,7 +48,7 @@ namespace StatSystem.UI
                 label.text = stat.value.ToString();
                 stat.valueChanged += () =>
                 {
-                    label.text = stat.value.ToString() ;
+                    label.text = stat.value.ToString();
                 };
                 Button incrementButton = primaryStats[i].Q<Button>("increment-button");
                 incrementButton.SetEnabled(m_Controller.statPoints > 0 && stat.baseValue != stat.definition.cap);
@@ -62,7 +62,7 @@ namespace StatSystem.UI
             }
 
             VisualElement stats = root.Q("stats");
-            for(int i=0; i < stats.childCount; i++)
+            for (int i = 0; i < stats.childCount; i++)
             {
                 Stat stat = m_Controller.stats[stats[i].name.Replace("-", "")];
                 Label label = stats[i].Q<Label>("value");
@@ -85,8 +85,6 @@ namespace StatSystem.UI
                     incrementButton.SetEnabled(m_Controller.statPoints > 0);
                 }
             };
-
-
         }
 
         public void Show()
@@ -98,6 +96,5 @@ namespace StatSystem.UI
         {
             m_UIDocument.rootVisualElement.style.display = DisplayStyle.None;
         }
-
     }
 }
