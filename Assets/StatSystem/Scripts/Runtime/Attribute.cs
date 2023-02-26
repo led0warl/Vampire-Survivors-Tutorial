@@ -12,6 +12,12 @@ namespace StatSystem
         
         public Attribute(StatDefinition definition) : base(definition)
         {
+            
+        }
+
+        public override void Initialize()
+        {
+            base.Initialize();
             m_CurrentValue = value;
         }
 
