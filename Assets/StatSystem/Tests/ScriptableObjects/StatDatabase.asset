@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b473a1d3d22a4198aaa6e8f73bc0b599, type: 3}
-  m_Name: TestStatDatabase
+  m_Name: StatDatabase
   m_EditorClassIdentifier: 
   stats:
   - {fileID: 2821024433959980759}
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
   m_Name: MovementSpeed
   m_EditorClassIdentifier: 
-  m_BaseValue: 1
+  m_BaseValue: 100
   m_Cap: -1
   m_Formula: {fileID: 0}
 --- !u!114 &602980892769668245
