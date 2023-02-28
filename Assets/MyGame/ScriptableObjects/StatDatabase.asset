@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8266115164081070431
+--- !u!114 &-9153484401715855875
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,31 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
-  m_Name: New Item
+  m_Name: AttackSpeed
   m_EditorClassIdentifier: 
-  m_BaseValue: 0
+  m_BaseValue: 1
   m_Cap: -1
---- !u!114 &11400000
+  m_Formula: {fileID: 0}
+--- !u!114 &-8633429690590637576
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b473a1d3d22a4198aaa6e8f73bc0b599, type: 3}
-  m_Name: StatDatabase
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: Wisdom
   m_EditorClassIdentifier: 
-  stats:
-  - {fileID: 7835437812277254110}
-  attributes:
-  - {fileID: 8368211959853610625}
-  - {fileID: 4232372671541270850}
-  primaryStats:
-  - {fileID: 4293814295663333646}
-  - {fileID: 2699050868466357096}
---- !u!114 &2699050868466357096
+  m_BaseValue: 1
+  m_Cap: -1
+  m_Formula: {fileID: 0}
+--- !u!114 &-7660887804366838733
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,9 +42,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
   m_Name: Intelligence
   m_EditorClassIdentifier: 
-  m_BaseValue: 0
+  m_BaseValue: 1
   m_Cap: -1
---- !u!114 &4232372671541270850
+  m_Formula: {fileID: 0}
+--- !u!114 &-7554496747207532633
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,11 +55,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
-  m_Name: Mana
+  m_Name: CriticalHitMultiplier
   m_EditorClassIdentifier: 
-  m_BaseValue: 100
+  m_BaseValue: 200
   m_Cap: -1
---- !u!114 &4293814295663333646
+  m_Formula: {fileID: 0}
+--- !u!114 &-6591833141603881016
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,7 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BaseValue: 1
   m_Cap: -1
---- !u!114 &7835437812277254110
+  m_Formula: {fileID: 0}
+--- !u!114 &-5326861665660315317
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,11 +85,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
-  m_Name: PhysicalAttack
+  m_Name: PhysicalDefense
   m_EditorClassIdentifier: 
   m_BaseValue: 0
   m_Cap: -1
---- !u!114 &8368211959853610625
+  m_Formula: {fileID: 11400000, guid: bcb741aacd98fa1438f64dc240b921c4, type: 2}
+--- !u!114 &-4364046602682949830
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,3 +104,185 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BaseValue: 100
   m_Cap: -1
+  m_Formula: {fileID: 0}
+--- !u!114 &-3093731967612361882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: CriticalHitChance
+  m_EditorClassIdentifier: 
+  m_BaseValue: 0
+  m_Cap: -1
+  m_Formula: {fileID: 0}
+--- !u!114 &-2205215159403125824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: Charisma
+  m_EditorClassIdentifier: 
+  m_BaseValue: 1
+  m_Cap: 1
+  m_Formula: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b473a1d3d22a4198aaa6e8f73bc0b599, type: 3}
+  m_Name: StatDatabase
+  m_EditorClassIdentifier: 
+  stats:
+  - {fileID: 2821024433959980759}
+  - {fileID: -9153484401715855875}
+  - {fileID: -5326861665660315317}
+  - {fileID: 1872731629495391091}
+  - {fileID: 3588882140900881563}
+  - {fileID: 49155474371250164}
+  - {fileID: -3093731967612361882}
+  - {fileID: -7554496747207532633}
+  attributes:
+  - {fileID: -4364046602682949830}
+  - {fileID: 2920497817434425185}
+  primaryStats:
+  - {fileID: -6591833141603881016}
+  - {fileID: -2205215159403125824}
+  - {fileID: -8633429690590637576}
+  - {fileID: -7660887804366838733}
+  - {fileID: 5862196794618527276}
+  - {fileID: 602980892769668245}
+--- !u!114 &49155474371250164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: MovementSpeed
+  m_EditorClassIdentifier: 
+  m_BaseValue: 100
+  m_Cap: -1
+  m_Formula: {fileID: 0}
+--- !u!114 &602980892769668245
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: Constitution
+  m_EditorClassIdentifier: 
+  m_BaseValue: 1
+  m_Cap: -1
+  m_Formula: {fileID: 0}
+--- !u!114 &1872731629495391091
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: MagicalAttack
+  m_EditorClassIdentifier: 
+  m_BaseValue: 0
+  m_Cap: -1
+  m_Formula: {fileID: 0}
+--- !u!114 &2821024433959980759
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: PhysicalAttack
+  m_EditorClassIdentifier: 
+  m_BaseValue: 0
+  m_Cap: -1
+  m_Formula: {fileID: 11400000, guid: bcb741aacd98fa1438f64dc240b921c4, type: 2}
+--- !u!114 &2920497817434425185
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: Mana
+  m_EditorClassIdentifier: 
+  m_BaseValue: 100
+  m_Cap: -1
+  m_Formula: {fileID: 0}
+--- !u!114 &3188635492452569790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: New Item
+  m_EditorClassIdentifier: 
+  m_BaseValue: 0
+  m_Cap: -1
+  m_Formula: {fileID: 0}
+--- !u!114 &3588882140900881563
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: MagicalDefense
+  m_EditorClassIdentifier: 
+  m_BaseValue: 0
+  m_Cap: -1
+  m_Formula: {fileID: 0}
+--- !u!114 &5862196794618527276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1c38672a6b454e8ed0e07b48a4296b, type: 3}
+  m_Name: Dexterity
+  m_EditorClassIdentifier: 
+  m_BaseValue: 1
+  m_Cap: -1
+  m_Formula: {fileID: 0}

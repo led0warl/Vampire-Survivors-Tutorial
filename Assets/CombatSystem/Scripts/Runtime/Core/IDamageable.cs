@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+using Core;
 namespace CombatSystem.Runtime.Core
 {
     public interface IDamageable
@@ -18,6 +15,6 @@ namespace CombatSystem.Runtime.Core
         event Action<int> healed;
         event Action<int, bool> damaged;
         void TakeDamage(IDamage rawDamage);
-
+        
     }
 }
