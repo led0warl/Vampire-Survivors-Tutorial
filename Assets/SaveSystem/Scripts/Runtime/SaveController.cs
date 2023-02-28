@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SaveSystem.Runtime
+namespace SaveSystem.Scripts.Runtime
 {
     public class SaveController : MonoBehaviour
     {
         [SerializeField] private SaveData m_SaveData;
         [SerializeField] private SaveDataChannel m_SaveDataChannel;
         [SerializeField] private LoadDataChannel m_LoadDataChannel;
-        [HideInInspector, SerializeField] private string m_id;
+        [HideInInspector, SerializeField] private string m_Id;
 
-        private void Rest()
+        private void Reset()
         {
-            m_id = Guid.NewGuid().ToString();
+            m_Id = Guid.NewGuid().ToString();
         }
 
         private void OnEnable()
         {
             m_LoadDataChannel.load += OnLoadData;
             m_SaveDataChannel.save += OnSaveData;
-
         }
 
         private void OnDisable()
@@ -36,16 +35,16 @@ namespace SaveSystem.Runtime
             {
                 data[savable.GetType().ToString()] = savable.data;
             }
-            m_SaveData.Save(m_id, data);
+            m_SaveData.Save(m_Id, data);
         }
 
         private void OnLoadData()
         {
-            m_SaveData.Load(m_id, out object data);
-            Dictionary<string,object> dictionary  = data as Dictionary<string,object>;
-            foreach(ISavable saveble in GetComponents<ISavable>())
+            m_SaveData.Load(m_Id, out object data);
+            Dictionary<string, object> dictionary = data as Dictionary<string, object>;
+            foreach (ISavable savable in GetComponents<ISavable>())
             {
-                saveble.Load(dictionary[saveble.GetType().ToString()]);
+                savable.Load(dictionary[savable.GetType().ToString()]);
             }
         }
     }

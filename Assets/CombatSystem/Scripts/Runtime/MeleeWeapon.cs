@@ -1,8 +1,8 @@
-﻿using CombatSystem.Runtime.Core;
-using System;
+﻿using System;
+using CombatSystem.Scripts.Runtime.Core;
 using UnityEngine;
 
-namespace CombatSystem.Runtime
+namespace CombatSystem.Scripts.Runtime
 {
     public class MeleeWeapon : MonoBehaviour
     {

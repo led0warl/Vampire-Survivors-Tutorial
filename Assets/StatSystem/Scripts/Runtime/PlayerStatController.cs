@@ -87,7 +87,7 @@ namespace StatSystem
             }
         }
 
-        #region Save System
+        #region Stat System
 
         public override object data
         {
@@ -104,7 +104,6 @@ namespace StatSystem
         {
             base.Load(data);
             PlayerStatControllerData playerStatControllerData = (PlayerStatControllerData)data;
-
             m_StatPoints = playerStatControllerData.statPoints;
             statPointsChanged?.Invoke();
         }

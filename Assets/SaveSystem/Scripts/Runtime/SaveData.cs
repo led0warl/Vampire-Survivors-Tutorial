@@ -2,9 +2,9 @@
 using System.IO;
 using UnityEngine;
 
-namespace SaveSystem.Runtime
+namespace SaveSystem.Scripts.Runtime
 {
-    [CreateAssetMenu(fileName ="SaveData",menuName ="SaveSystem/SaveData")]
+    [CreateAssetMenu(fileName = "SaveData", menuName = "SaveSystem/SaveData", order = 0)]
     public class SaveData : ScriptableObject
     {
         [SerializeField] private LoadDataChannel m_LoadDataChannel;
@@ -45,16 +45,13 @@ namespace SaveSystem.Runtime
             if (previousSaveExists)
                 FileManager.LoadFromBinaryFile(m_Path, out m_Data);
             m_SaveDataChannel.Save();
-            FileManager.SaveToBinaryFile(m_Path,m_Data);
+            FileManager.SaveToBinaryFile(m_Path, m_Data);
             m_Data.Clear();
-             
-           
         }
 
         private void OnValidate()
         {
             m_Path = Path.Combine(Application.persistentDataPath, m_FileName);
         }
-
     }
 }

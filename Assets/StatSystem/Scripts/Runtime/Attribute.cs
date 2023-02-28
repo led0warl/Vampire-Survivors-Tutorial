@@ -1,22 +1,20 @@
-﻿using SaveSystem.Runtime;
-using System;
+﻿using System;
+using SaveSystem.Scripts.Runtime;
 using UnityEngine;
 
 namespace StatSystem
 {
-    public class Attribute : Stat,ISavable
+    public class Attribute : Stat, ISavable
     {
         protected int m_CurrentValue;
         public int currentValue => m_CurrentValue;
-
         public event Action currentValueChanged;
         public event Action<StatModifier> appliedModifier;
         
-        public Attribute(StatDefinition definition) : base(definition)
+        public Attribute(StatDefinition definition, StatController controller) : base(definition, controller)
         {
-            
         }
-
+        
         public override void Initialize()
         {
             base.Initialize();
@@ -45,20 +43,16 @@ namespace StatSystem
             {
                 m_CurrentValue = newValue;
                 currentValueChanged?.Invoke();
-                
             }
             appliedModifier?.Invoke(modifier);
         }
 
         #region Save System
 
-        public object data => new AttributeData()
+        public object data => new AttributeData
         {
-            currentValue= m_CurrentValue,
+            currentValue = currentValue
         };
-
-        #endregion
-
         public void Load(object data)
         {
             AttributeData attributeData = (AttributeData)data;
@@ -71,5 +65,8 @@ namespace StatSystem
         {
             public int currentValue;
         }
+
+        #endregion
+        
     }
 }
