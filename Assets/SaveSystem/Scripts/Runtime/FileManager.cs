@@ -1,11 +1,10 @@
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-namespace SaveSystem.Runtime
+namespace SaveSystem.Scripts.Runtime
 {
     public class FileManager
     {
@@ -22,7 +21,10 @@ namespace SaveSystem.Runtime
             {
                 Debug.LogWarning($"Failed to save file at {path}");
             }
-            finally { file.Close(); }
+            finally
+            {
+                file.Close();
+            }
         }
 
         public static void LoadFromBinaryFile(string path, out Dictionary<string, object> data)
@@ -35,13 +37,15 @@ namespace SaveSystem.Runtime
             {
                 data = formatter.Deserialize(file) as Dictionary<string, object>;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 Debug.LogWarning($"Failed to load file at {path}");
                 data = new Dictionary<string, object>();
             }
-            finally { file.Close(); }
+            finally
+            {
+                file.Close();
+            }
         }
-
     }
 }

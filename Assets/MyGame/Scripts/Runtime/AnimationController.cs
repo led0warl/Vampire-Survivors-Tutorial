@@ -1,7 +1,4 @@
-using StatSystem;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using StatSystem;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -21,8 +18,8 @@ namespace MyGame
         private void Awake()
         {
             m_Animator = GetComponent<Animator>();
-            m_NavMeshAgent= GetComponent<NavMeshAgent>();
-            m_StatController= GetComponent<StatController>();
+            m_NavMeshAgent = GetComponent<NavMeshAgent>();
+            m_StatController = GetComponent<StatController>();
         }
 
         private void Update()
@@ -48,18 +45,16 @@ namespace MyGame
             }
         }
 
-        private void OnMovementSpeedChanged()
-        {
-            m_Animator.SetFloat(MOVEMENT_SPEED, m_StatController.stats["MovementSpeed"].value / 100f);
-            m_NavMeshAgent.speed = m_BaseSpeed * m_StatController.stats["MovementSpeed"].value / 100f;
-        }
-
         private void OnStatControllerInitialized()
         {
             OnMovementSpeedChanged();
             m_StatController.stats["MovementSpeed"].valueChanged += OnMovementSpeedChanged;
         }
 
-        
+        private void OnMovementSpeedChanged()
+        {
+            m_Animator.SetFloat(MOVEMENT_SPEED, m_StatController.stats["MovementSpeed"].value / 100f);
+            m_NavMeshAgent.speed = m_BaseSpeed * m_StatController.stats["MovementSpeed"].value / 100f;
+        }
     }
 }

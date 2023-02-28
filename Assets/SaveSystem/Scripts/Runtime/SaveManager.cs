@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SaveSystem.Runtime
+namespace SaveSystem.Scripts.Runtime
 {
     [DefaultExecutionOrder(1)]
     public class SaveManager : MonoBehaviour
@@ -10,9 +10,7 @@ namespace SaveSystem.Runtime
         private void Awake()
         {
             if (m_SaveData.previousSaveExists)
-            {
                 m_SaveData.Load();
-            }
         }
 
         private void OnApplicationQuit()

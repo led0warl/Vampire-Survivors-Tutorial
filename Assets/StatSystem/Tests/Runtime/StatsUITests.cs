@@ -1,7 +1,6 @@
+﻿using System.Collections;
 using LevelSystem;
 using NUnit.Framework;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,13 +11,12 @@ namespace StatSystem.Tests
 {
     public class StatsUITests
     {
-
         [OneTimeSetUp]
-        public void OnTimesetup()
+        public void OneTimeSetup()
         {
             EditorSceneManager.LoadSceneInPlayMode("Assets/StatSystem/Tests/Scenes/Test.unity", new LoadSceneParameters(LoadSceneMode.Single));
         }
-
+        
         [UnityTest]
         public IEnumerator StatUI_WhenIncrementButtonClicked_IncrementsStatBaseValue()
         {
@@ -34,7 +32,7 @@ namespace StatSystem.Tests
             }
             Assert.AreEqual(2, playerStatController.stats["Strength"].value);
         }
-
+        
         [UnityTest]
         public IEnumerator StatUI_WhenIncrementButtonClicked_DecrementsStatPoints()
         {
@@ -44,19 +42,19 @@ namespace StatSystem.Tests
             UIDocument uiDocument = GameObject.FindObjectOfType<UIDocument>();
             VisualElement strengthElement = uiDocument.rootVisualElement.Q("strength");
             Button incrementButton = strengthElement.Q<Button>("increment-button");
-            using (var e = new NavigationSubmitEvent { target = incrementButton})
+            using (var e = new NavigationSubmitEvent { target = incrementButton })
             {
                 incrementButton.SendEvent(e);
             }
             Assert.AreEqual(4, playerStatController.statPoints);
         }
-
+        
         [UnityTest]
-        public IEnumerator StatUI_WhenNoStatpoints_DisablesIncrements()
+        public IEnumerator StatUI_WhenNoStatPoints_DisablesIncrementButtons()
         {
             yield return null;
             PlayerStatController playerStatController = GameObject.FindObjectOfType<PlayerStatController>();
-            Assert.AreEqual(5,playerStatController.statPoints);
+            Assert.AreEqual(5, playerStatController.statPoints);
             UIDocument uiDocument = GameObject.FindObjectOfType<UIDocument>();
             VisualElement strengthElement = uiDocument.rootVisualElement.Q("strength");
             Button incrementButton = strengthElement.Q<Button>("increment-button");
@@ -67,27 +65,27 @@ namespace StatSystem.Tests
                     incrementButton.SendEvent(e);
                 }
             }
-            Assert.AreEqual(0,playerStatController.statPoints);
+            Assert.AreEqual(0, playerStatController.statPoints);
             Assert.AreEqual(false, incrementButton.enabledSelf);
         }
-
+        
         [UnityTest]
         public IEnumerator StatUI_WhenStatValueChanged_UpdatesText()
         {
             yield return null;
             PlayerStatController playerStatController = GameObject.FindObjectOfType<PlayerStatController>();
-            UIDocument uIDocument= GameObject.FindObjectOfType<UIDocument>();
-            VisualElement physicalAttackElement = uIDocument.rootVisualElement.Q("physical-attack");
+            UIDocument uiDocument = GameObject.FindObjectOfType<UIDocument>();
+            VisualElement physicalAttackElement = uiDocument.rootVisualElement.Q("physical-attack");
             Label physicalAttackValue = physicalAttackElement.Q<Label>("value");
             Assert.AreEqual("3", physicalAttackValue.text);
-            playerStatController.stats["physicalAttack"].AddModifier(new StatModifier
+            playerStatController.stats["PhysicalAttack"].AddModifier(new StatModifier
             {
                 magnitude = 5,
                 type = ModifierOperationType.Additive
             });
             Assert.AreEqual("8", physicalAttackValue.text);
         }
-
+        
         [UnityTest]
         public IEnumerator StatUI_WhenStatCapReached_DisablesIncrementButton()
         {
@@ -96,9 +94,9 @@ namespace StatSystem.Tests
             UIDocument uiDocument = GameObject.FindObjectOfType<UIDocument>();
             VisualElement charismaElement = uiDocument.rootVisualElement.Q("charisma");
             Button incrementButton = charismaElement.Q<Button>("increment-button");
-            Assert.AreEqual(false, incrementButton.enabledSelf);
+            Assert.AreEqual(false,incrementButton.enabledSelf);
         }
-
+        
         [UnityTest]
         public IEnumerator StatUI_WhenLevelUp_UpdatesText()
         {
@@ -111,7 +109,7 @@ namespace StatSystem.Tests
             levelController.currentExperience += 100;
             Assert.AreEqual("2", levelValue.text);
         }
-
+        
         [UnityTest]
         public IEnumerator StatUI_WhenGainExperience_UpdatesText()
         {
@@ -124,6 +122,5 @@ namespace StatSystem.Tests
             levelController.currentExperience += 5;
             Assert.AreEqual("5 / 83", experienceValue.text);
         }
-
     }
 }

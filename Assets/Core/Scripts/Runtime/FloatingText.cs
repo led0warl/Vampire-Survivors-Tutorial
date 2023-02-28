@@ -1,6 +1,5 @@
-﻿using DG.Tweening;
-using System;
-using System.Runtime.CompilerServices;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Core
@@ -33,6 +32,5 @@ namespace Core
             m_TextMesh.text = value;
             m_TextMesh.color = color;
         }
-
     }
 }

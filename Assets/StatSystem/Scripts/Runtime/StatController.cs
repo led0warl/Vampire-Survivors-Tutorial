@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using SaveSystem.Runtime;
+using SaveSystem.Scripts.Runtime;
 using StatSystem.Nodes;
 using UnityEngine;
 
 namespace StatSystem
 {
-    public class StatController : MonoBehaviour
+    public class StatController : MonoBehaviour, ISavable
     {
         [SerializeField] private StatDatabase m_StatDatabase;
         protected Dictionary<string, Stat> m_Stats = new Dictionary<string, Stat>(StringComparer.OrdinalIgnoreCase);
         public Dictionary<string, Stat> stats => m_Stats;
-        
 
         private bool m_IsInitialized;
         public bool isInitialized => m_IsInitialized;
@@ -35,17 +34,24 @@ namespace StatSystem
         {
             foreach (StatDefinition definition in m_StatDatabase.stats)
             {
-                m_Stats.Add(definition.name, new Stat(definition));
+                m_Stats.Add(definition.name, new Stat(definition, this));
             }
 
             foreach (StatDefinition definition in m_StatDatabase.attributes)
             {
-                m_Stats.Add(definition.name, new Attribute(definition));
+                if (definition.name.Equals("Health", StringComparison.OrdinalIgnoreCase))
+                {
+                    m_Stats.Add(definition.name, new Health(definition, this));
+                }
+                else
+                {
+                    m_Stats.Add(definition.name, new Attribute(definition, this));   
+                }
             }
 
             foreach (StatDefinition definition in m_StatDatabase.primaryStats)
             {
-                m_Stats.Add(definition.name, new PrimaryStat(definition));
+                m_Stats.Add(definition.name, new PrimaryStat(definition, this));
             }
             
             InitializeStatFormulas();
@@ -58,8 +64,6 @@ namespace StatSystem
             m_IsInitialized = true;
             initialized?.Invoke();
         }
-
-
 
         protected virtual void InitializeStatFormulas()
         {
@@ -83,7 +87,6 @@ namespace StatSystem
                     }
                 }
             }
-
         }
 
         #region Stat System
@@ -127,6 +130,6 @@ namespace StatSystem
 
         #endregion
 
-
+        
     }
 }

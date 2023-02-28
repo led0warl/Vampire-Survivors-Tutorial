@@ -1,4 +1,4 @@
-﻿namespace SaveSystem.Runtime
+﻿namespace SaveSystem.Scripts.Runtime
 {
     public interface ISavable
     {

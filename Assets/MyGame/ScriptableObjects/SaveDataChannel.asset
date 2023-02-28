@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b059f818ae0639d438c8a635b8f8ed68, type: 3}
+  m_Script: {fileID: 11500000, guid: f09e21d379a54da4b26308cc9d3fa184, type: 3}
   m_Name: SaveDataChannel
   m_EditorClassIdentifier: 

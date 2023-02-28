@@ -1,6 +1,4 @@
-using LevelSystem;
-using System.Collections;
-using System.Collections.Generic;
+﻿using LevelSystem;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -12,7 +10,7 @@ namespace StatSystem.UI
         private UIDocument m_UIDocument;
         private ILevelable m_Levelable;
         [SerializeField] private PlayerStatController m_Controller;
-
+        
         private void Awake()
         {
             m_UIDocument = GetComponent<UIDocument>();

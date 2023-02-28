@@ -1,5 +1,5 @@
-﻿using CombatSystem.Runtime.Core;
 ﻿using System;
+using CombatSystem.Scripts.Runtime.Core;
 using Core;
 using StatSystem;
 using UnityEngine;
@@ -119,10 +119,8 @@ namespace MyGame
                                      100f);
                 rawDamage.isCriticalHit = true;
             }
-
+            
             damageable.TakeDamage(rawDamage);
         }
-
-      
     }
 }

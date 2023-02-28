@@ -1,6 +1,4 @@
-using LevelSystem;
-using System.Collections;
-using System.Collections.Generic;
+﻿using LevelSystem;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -19,7 +17,7 @@ namespace StatSystem.UI
 
         private void Awake()
         {
-            m_UIDocument= GetComponent<UIDocument>();
+            m_UIDocument = GetComponent<UIDocument>();
             m_Levelable = m_Controller.GetComponent<ILevelable>();
         }
 
@@ -64,6 +62,12 @@ namespace StatSystem.UI
             OnExperienceChangedInternal();
         }
 
+        private void OnLevelChanged()
+        {
+            OnExperienceChangedInternal();
+            m_Level.text = m_Levelable.level.ToString();
+        }
+
         private void OnExperienceChangedInternal()
         {
             m_ExperienceBar.value = (float)m_Levelable.currentExperience / m_Levelable.requiredExperience * 100f;
@@ -75,25 +79,9 @@ namespace StatSystem.UI
             OnHealthChangedInternal();
         }
 
-        private void OnMaxManaChanged()
-        {
-            OnManaChangedInternal();
-        }
-
         private void OnMaxHealthChanged()
         {
             OnHealthChangedInternal();
-        }
-
-        private void OnManaChanged()
-        {
-            OnManaChangedInternal();
-        }
-
-        private void OnLevelChanged()
-        {
-            OnExperienceChangedInternal();
-            m_Level.text = m_Levelable.level.ToString();
         }
 
         private void OnHealthChangedInternal()
@@ -101,6 +89,16 @@ namespace StatSystem.UI
             Attribute health = m_Controller.stats["Health"] as Attribute;
             m_HealthBar.value = (float)health.currentValue / health.value * 100f;
             m_HealthBar.title = $"{health.currentValue} / {health.value}";
+        }
+
+        private void OnManaChanged()
+        {
+            OnManaChangedInternal();
+        }
+
+        private void OnMaxManaChanged()
+        {
+            OnManaChangedInternal();
         }
 
         private void OnManaChangedInternal()

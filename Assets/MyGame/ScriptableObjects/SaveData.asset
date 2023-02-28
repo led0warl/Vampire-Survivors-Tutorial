@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943d0065689890747813cc6df30c701f, type: 3}
+  m_Script: {fileID: 11500000, guid: 109a0ba11b974199959a7b2e8eb01218, type: 3}
   m_Name: SaveData
   m_EditorClassIdentifier: 
-  m_LoadDataChannel: {fileID: 11400000, guid: 68943968b8418c54ba331a5574001f6c, type: 2}
-  m_SaveDataChannel: {fileID: 11400000, guid: 3abf0fa91b99ec5479b1d10e25892717, type: 2}
-  m_FileName: MyGame
-  m_Path: C:/Users/User/AppData/LocalLow/DefaultCompany/Vampire Survivors Tutorial\MyGame
+  m_LoadDataChannel: {fileID: 11400000, guid: b186c19f7a4a9b0428d240ad623826a3, type: 2}
+  m_SaveDataChannel: {fileID: 11400000, guid: 262def29d4b24ca4bbbbccf5f85ccd9f, type: 2}
+  m_FileName: Mygame
+  m_Path: C:/Users/Cory/AppData/LocalLow/DefaultCompany/udemy-stat-system-course\Mygame

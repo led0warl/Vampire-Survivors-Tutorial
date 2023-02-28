@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using Core;
-namespace CombatSystem.Runtime.Core
+
+namespace CombatSystem.Scripts.Runtime.Core
 {
     public interface IDamageable
     {
@@ -15,6 +16,5 @@ namespace CombatSystem.Runtime.Core
         event Action<int> healed;
         event Action<int, bool> damaged;
         void TakeDamage(IDamage rawDamage);
-        
     }
 }
